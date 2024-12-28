@@ -2,6 +2,8 @@ import { useState } from "react";
 
 const AddHotelForm = () => {
 
+    const apiBaseURL = "https://hotels-backend-ap-is.vercel.app"
+
     const [formData, setFormData] = useState({
         name: "",
         category: "",
@@ -30,7 +32,7 @@ const AddHotelForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try{
-            const response = await fetch('http://localhost:3000/hotels',
+            const response = await fetch(`${apiBaseURL}/hotels`,
                 {
                     method: 'POST',
                     headers: {
